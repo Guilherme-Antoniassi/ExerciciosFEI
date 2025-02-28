@@ -1,0 +1,15 @@
+
+Instruções 	Opcode
+	
+MOV A,R4=       EC
+ADD A,R7=	2F
+MOV R5,A=	FD
+INC A=		04
+ADD A,10=	25
+MOV A,#0=	74
+ADD A,R0=	28
+ADD A,R1=	29
+ADD A,@R0=	26
+ADD A,@R1=	27
+ADD A,#43H=	24
+ADD A, 43=	25
