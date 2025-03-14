@@ -13,3 +13,92 @@ ADD A,@R0=	26
 ADD A,@R1=	27
 ADD A,#43H=	24
 ADD A, 43=	25
+
+Funções iterativas são funções que utilizam estruturas de 
+controle de fluxo iterativas, como loops, para repetir uma 
+sequência de instruções até que uma condição seja atendida.
+Qual é a diferença entre uma função recursiva e uma função 
+iterativa em termos de desempenho e consumo de memória?
+
+R: funções recursiva consome mais memoria pois ela fica rodando infinito e armazenando a pilha e assim exigindo mais do processador e da meoria.
+
+;Exercicio 1
+;MOV A,#11111110B
+;MOV P1,A
+
+
+;VOLTA:
+;MOV R0,#7
+;LOOP:
+;RL A
+;MOV P1,A
+
+;DJNZ R0, LOOP
+
+;LOOP2:
+;RR A
+;MOV P1,A
+
+;DJNZ R0, LOOP2
+;SJMP VOLTA
+
+;EXERCICIO 4
+;Funções iterativas são funções que utilizam estruturas de 
+
+
+;MOV A, #11h
+;LCALL FUNC01
+;SJMP $
+;org 1100h
+;FUNC01:
+;MOV 30H, #33h
+;LCALL FUNC02
+;NOP
+;RET
+
+;org 2130h
+;FUNC02:
+;MOV 40H, #01H
+;LCALL FUNC03
+;NOP
+;RET
+;org 30A0h
+;FUNC03:
+;MOV 40H, #50H
+;RET
+
+;EXERCICIO 7
+
+;LJMP MAIN
+
+;ORG 1111H
+;MAIN:
+;LCALL MAIN
+;SJMP $
+
+;FUNC:
+;NOP
+;LCALL FUNC
+;RET
+
+;EXERCICIO 3
+
+
+MOV 30H,#2
+MOV 31H,#4
+MOV 32H,#2
+MOV 33H,#2
+MOV 34H,#3
+MOV R0,#30H
+MOV R1,#40H
+MOV R2,#5
+LCALL COPIA
+SJMP $
+
+COPIA:
+MOV A,@R0
+MOV @R1,A
+INC R0
+INC R1
+DJNZ R2,COPIA
+RET
