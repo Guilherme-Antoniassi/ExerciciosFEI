@@ -26,7 +26,7 @@ public class Swapper {
        double aux;
        aux=x;
        x=y;
-       y=x;
+       y=aux;
    }
     
 }
