@@ -102,3 +102,26 @@ INC R0
 INC R1
 DJNZ R2,COPIA
 RET
+
+
+Aula 07
+
+1-Representar o número -127 em complemento de 2 de 8bits
+R: +127= 01111111,complemento de 1: 1000 0000
+complemento de 2: 1000 0000+1= 1000 0001
+ 
+2-Representar o número -2 em complemento de 2 de 8bits.
+R: +2= 0000 0010, complemento de 1: 1111 1101
+complemento de 2:  1111 1101+1=1111 1110
+
+3-Representar o número 6 no excesso de 127 de 8bits.
+R: 127+5=133
+133=10000101
+
+4-Representar o número -6 no excesso de 127 de 8bits
+R: 127-6=121
+121=01111001
+
+5-Representar o número 5 no excesso de 1023 de 11bits
+R: 1023+5=1028
+1028:10000000100
