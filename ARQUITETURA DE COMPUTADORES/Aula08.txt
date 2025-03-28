@@ -47,3 +47,104 @@ finalmente: 01000000101100000000000000000000
 
 
 LAB:
+
+1-Qual o tamanho máximo de elementos de um vetor do tipo char que 
+você pode declarar, considerando que não haverá nenhuma outra 
+variável?
+a) Char ocupa 1kyte da memoria RAM
+     2kb/1b=2k=2048 elementos
+char vetor[2048]
+
+Qual o tamanho máximo de elementos de um vetor do tipo int que você 
+pode declarar, considerando que não haverá nenhuma outra variável, 
+sabendo que o int no Arduino é de 16bits?
+
+b)16bits=2Bytes
+   2kb/2b=1k ,ou mais especifico=1024
+int vetor[1024]	
+
+2-Represente o número -20 usando o padrão complemento de 2 em 8bits.
+
+ 20→00020200
+    11101011
+	  +1= -20→11101100
+
+4-Qual faixa de números que podemos representar em uma variável do tipo int
+no Arduino UNO?
+
+2^16=65536
+  2^15=32768
++0....32767
++1...-32768
+
+5-Qual faixa de números inteiros que podemos representar em uma variável do 
+tipo long no Arduino UNO?
+
+4b=326bits
+2^31=2.147.483.648
+
++0...2.147.483.647
+-1...-2.147.483.648
+
+6-Qual faixa de números que podemos representar em uma variável do tipo 
+unsigned int no Arduino UNO?
+
+2^16=65536
+000...65536
+
+(unsigned int significa que so é possível números positivos)
+
+7-Qual faixa de números que podemos representar em uma variável do tipo 
+unsigned long no Arduino UNO?
+
+2^32=4.294.967.296
+
+ 0...4.294.967.295
+
+8-Qual faixa de números inteiros que podemos representar em uma variável do 
+tipo long long no Arduino UNO?
+
+8B=64bits
+
+2^63=9.223.372.036.854.775.808
+
+0...9.223.372.036.854.775.807
+-1...-9.223.372.036.854.775.808
+
+9-represente em binário o número armazenado na variável do 
+programa (int valor=-52;)
+
+52→110100
+
+52=0000000000110100
+   1111111111001011
+		 +1=1111111111001100
+
+10-Explique o que é overflow e underflow em relação à representação 
+de números inteiros
+
+overflow significa que os números positivos excedeu a capacidade máxima em que a variável é capaz de suportar 
+e underflow é o inverso, então supera a capacidade em números negativos.
+
+EX Overflow→ int valor=2.147.483.648, Underflow→ int valor -2.147.483.699
+
+11-Represente em binário o número 43 utilizando a representação 
+excessiva em máquinas de 8 bits usando um bias de 127
+
+127+43=170
+10101010
+
+12-Represente em binário o número -20 utilizando a representação 
+excessiva em máquinas de 8 bits usando um bias de 127
+
+127+(-20)=107
+01101011
+
+13-Converta os números abaixo para hexadecimal.
+OBS:para converter em hexa é preciso dividir os bits em 4 em 4 digito
+
+(10011110)→1001 1110= 9Eh
+(10111010)→1011 1010=BAh
+(1100110110000011)→1100 1101 1000 0011=CD83h
+
+
