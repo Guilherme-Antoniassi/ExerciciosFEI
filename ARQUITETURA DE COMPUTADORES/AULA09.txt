@@ -1,3 +1,4 @@
+TEORIA:
 Tempo por ciclo de máquina (TMC) :
 quanto tempo ele gasta para executar uma instrução? R:clock da maquina/frequência do clock
 
