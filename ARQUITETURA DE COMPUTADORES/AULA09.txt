@@ -1,0 +1,109 @@
+Tempo por ciclo de máquina (TMC) :
+quanto tempo ele gasta para executar uma instrução? R:clock da maquina/frequência do clock
+
+EX:
+Quanto tempo será gasto por esta subrotina?
+DELAY: 
+ mov R3, #200 ; 1 ciclo de máquina
+LOOP:
+ djnz R3, LOOP ; 2 ciclos de máquina
+RET ; 2 ciclo de máquina
+
+R: 
+   ele repete 200x o " djnz R3, LOOP" pois ele possui um LOOP, e como " djnz R3, LOOP" tem 2 ciclo, significa que sera 200x2+1( mov R3, #200 que possui 1 ciclo)+2(RET que possui 2 ciclo de maquina) 
+➢ Total de ciclo de máquinas = 200*2 + 1 + 2 = 403
+ ➢Tempo = 403 * 1.0us (para o clock de 12 MHz)
+➢Tempo 403us
+
+Teoricamente: qual o tempo do programa? Basta ver quantos bits cada operação ocupa e fazer a soma. EX: R3(2 bits) djnz R3(djnz R3) RET(1 bit),isso totalizando 5 BITS
+
+Exercício 1:
+Calcule quanto tempo será gasto por esta sub-rotina,considerando um cristal de 12MHz?
+
+;Subrotina para zerar a RA, interna
+;Retorna: posição de 0 a 127 da RAM interna zeradas
+;USA: A e R0
+
+ZERAR: CLR A
+    MOV R0,#127
+ROT: MOV @R0,A
+    DJNZ R0,ROT
+    RET
+
+R:
+    clr A=1, MOV R0,#127=1,MOV @R0 A=1,DJNZ R0 A=2, ret=2
+(como dentro de ROT nós temos 2 operações(mov @r0 a,djnz r0 a) nós iremos somar seus valores e multiplicar pelo 127 e depois somar com os valores restantes)
+
+➢ Total de ciclo de máquinas:127*3+1+1+2=385
+➢Tempo = 385 * 1.0us
+➢Tempo 385us
+
+2-Os dois programas abaixo fazem a mesma tarefa, zerar os 
+registradores R5 e R6. Compare as duas soluções com relação 
+ao tamanho de programa e tempo de execução.
+
+MOV R6,#0
+MOV R5,#0
+
+CLR A
+MOV R6,A
+MOV R5,A
+
+R:
+MOV R6 #0+ MOV R5 #0= 1+1= 2 Microssegundos
+CLR A+ MOV R6 A+ MOV R5 A= 1+1+1= 3 Microssegundos
+
+Ou seja, o primeiro programa tem uma velocidade maior
+
+
+3-Escreva uma sub-rotina para consumir 500 μs, ou seja, que 
+gere um intervalo de tempo de 500 μs, considerando que se 
+usa um cristal de 12 MHz.
+
+R:
+delay:
+mov r7 #248
+Loop:
+djz r3,LOOP
+nop
+ret
+
+4-Escreva uma sub-rotina que consuma exatamente 10ms, 
+considerando que se usa um cristal de 12 MHz.
+
+R:
+delay:
+mov r0,#84
+rot1:
+mov r1,#58
+rot2:
+djnz r1,rot2
+djnz r0,rot1
+not
+ret
+
+5-Os 3 programas a seguir apresenta três possíveis soluções para 
+o problema de se zerarem os oito registradores [R7, ... R0] do 
+banco 0. Compare as soluções levando em conta o tamanho do 
+programa e tempo de execução.
+
+;solução 1
+MOV R7,#0
+MOV R6,#0
+MOV R5,#0
+MOV R4,#0
+MOV R3,#0
+MOV R2,#0
+MOV R1,#0
+MOV R0,#0
+
+;SOLUÇÃO 2
+CLR A
+MOV R7,A
+MOV R6,A
+MOV R5,A
+MOV R4,A
+MOV R3,A
+MOV R2,A
+MOV R1,A
+MOV R0,A
