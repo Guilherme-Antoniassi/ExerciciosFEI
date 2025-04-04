@@ -108,3 +108,91 @@ MOV R3,A
 MOV R2,A
 MOV R1,A
 MOV R0,A
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+LABORATORIO:
+
+1- Na documentação do Arduino DUE (processador ARM 32 bits) diz que ele 
+possuí 512KB de memória flash (memória do programa) e 96KB de memória 
+SRAM.
+Sabendo dessas informações responda as perguntas abaixo:
+
+a) Qual o tamanho máximo de elementos de um vetor do tipo float que 
+você pode declarar, considerando que não haverá nenhuma outra 
+variável? 
+float vetor[]
+
+B)Qual o tamanho máximo de elementos de um vetor do tipo double que 
+você pode declarar, considerando que não haverá nenhuma outra 
+variável? 
+double vetor[]
+
+R:
+a)float ocupa 4 byte que é igua a(8x4)= 32 bits
+96KB/4= 24K= 24000 elementos
+float vetor[24000]
+
+(OBS:2^14+2^13=24576)
+
+b)double ocupa 8 byte e é igual a(8x8)= 64 bits
+96/8= 12k= 12000 elementos
+double vetor[12000]
+
+(OBS:2^13+2^14= 12288)
+
+2-Represente o número 5.3125 usando o padrão IEEE754 de 32 bits.
+Apresente todos os cálculos realizado para a conversão.
+
+R:convertendo 5,3125 para binário fica= 101,0101 → 1,010101
+5= 101
+0,3125:
+0,3125*2= 0,6250
+0,625*2= 1,250
+0,250*2= 0,5
+0,5*2= 1,0
+
+expoente= 127+2=129 → 10000001
+(OBS= fizemos +2 pois a virgula estava no terceiro numero do bit,no caso:101,... e como queremos ela no primeiro bit,nós movemos a virgula para 2 casas a esquerda para então ficar 1,....., ou seja,2^2 por isso nós somamos com 127)
+
+sinal=0
+expoente=10000001
+fração=010101
+
+finalmente= 01000000101010100000000000000000
+depois separa 4 em 4 digio e entao converte, ex:0100;0000;1010;.... que convertendo fica: 4;0;A;.....
+
+4-Represente o número 5.3125 usando o padrão IEEE754 de 64 bits.
+Apresente todos os cálculos realizado para a conversão.
+
+R: 5,3125=101,0101 → 1,010101
+1,010101*2^2
+1023+2=1025 → 10000 000001
+(OBS=como estamos em 64 bits, o valor para somar vai ser 1023 e nao 127)
+
+sinal=0
+expoente=10000 000001
+fração=010101
+
+finalmente=01000000000101010100000000000000000000000000000000000000000000
+separando 4 em 4 fica= 4;0;1;5;4;0;0;0;0;......
+
+5-Represente o número -24.875 usando o padrão IEEE754 de 32 bits.
+Apresente todos os cálculos realizado para a conversão.
+
+R:convertendo -24 fica= 11000
+ convertendo 0,875 fica= 111
+ juntando ambos fica  →11000,111; movendo a virgula para 4 casas a esquerda, no caso entao fica 1,1000111*2^4
+
+0,875:
+0,875*2= 1,75
+0,75*2= 1,5
+0,5*2= 1
+
+expoente=127+4=131 → 10000011
+
+sinal=1
+exp=10000011
+fração=1000111
+
+
