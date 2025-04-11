@@ -1,0 +1,97 @@
+LAB:
+Exercício 1:
+Calcule quanto tempo será gasto por esta subrotina, 
+considerando um cristal de 12MHz?
+
+ORG 080h
+ZERAR:
+CLR A
+MOV R0 #99
+ROT:
+MOV @R0 A
+NOP
+DJNZ R0 ROT
+RET
+
+R:
+CLR A=1
+MOV R0 #99=1
+MOV @R0 A=1
+NOP=1
+DJNZ R0 ROT=2
+RET=2
+
+396x4,99
+
+Exercício 2:
+
+Os 3 programas a seguir apresenta três possíveis soluções para o problema 
+de se zerarem os endereços de memória 30h até 38h. 
+Compare as soluções levando em conta:
+➢ o tamanho do programa e;
+➢ o tempo de execução.
+
+Solução 1:
+mov 30h #0 =2mc--3b
+mov 31h #0 =2mc--3b
+mov 32h #0 =2mc--3b
+mov 33h #0 =2mc--3b
+mov 34h #0 =2mc--3b
+mov 35h #0 =2mc--3b
+mov 36h #0 =2mc--3b
+mov 37h #0 =2mc--3b
+mov 38h #0 =2mc--3b
+
+R:Apos somar todos, fica= 18Ms--27B
+
+Solução 2:
+CLR A      =1--1
+MOV R0 #30H =1--2
+ROT:        
+MOV @R0 A =1--1
+INC R0    =1--1
+CJNE R0 #39H ROT =2--3
+
+R:como há um loop em "ROT" do 30h ate 39h,nós precisamos fazer 9x4(a soma dos mc no loop) que resulta em =36,entao somando com o resto(clr,mov r0)fica 38Ms. e os Bits somando fica 8B.
+No geral fica= 38Ms--8B
+
+Solução 3:
+mov 30h A =1--2
+mov 31h A =1--2
+mov 32h A =1--2
+mov 33h A =1--2
+mov 34h A =1--2
+mov 35h A =1--2
+mov 36h A =1--2
+mov 37h A =1--2
+mov 38h A =1--2
+
+R:somando ambos fica: 9Ms--18B
+ 
+Exercício 4:
+Qual é a diferença entre tempo de ciclo de máquina e clock da 
+frequência da máquina em arquitetura de computadores?
+Como a melhoria do tempo de ciclo de uma CPU pode melhorar 
+o desempenho geral de um computador?
+
+R:
+1mc=12 pulsos de clock
+é o tempo que o processador leva para executar a instrução mais simples.
+como melhorar o desempenho? uma maneira é aumentar a frequência dos pulsos,um exemplo é o overclock.
+
+Exercício 5:
+Escreva uma subrotina que consuma exatamente 8ms (ou 
+seja, 8000us), considerando que se usa um cristal de 12 MHz.
+
+R:delay:
+mov r0,#63
+rot1:
+mov r1,#64
+rot2:
+djnz r1,rot2
+djnz r0,rot1
+nop
+ret
+
+T = 1 + [ 1 + (2 x 63) + 2] x 64 + 1 + 2 = 8000 MC
+T = 8000*1us = 8ms
