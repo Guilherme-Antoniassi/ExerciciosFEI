@@ -83,6 +83,9 @@ djnz r0,rot1
 not
 ret
 
+T = 1 + [ 1 + (2 x 58) + 2] x 84 + 1 + 2 = 10000 MC
+T = 10000*1us = 10ms
+
 5-Os 3 programas a seguir apresenta três possíveis soluções para 
 o problema de se zerarem os oito registradores [R7, ... R0] do 
 banco 0. Compare as soluções levando em conta o tamanho do 
