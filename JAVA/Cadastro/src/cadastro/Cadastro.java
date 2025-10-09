@@ -4,6 +4,9 @@
  */
 package cadastro;
 
+import Controller.CadastroController;
+import View.Janela_Cadastro;
+
 /**
  *
  * @author unifgaraujo
@@ -15,6 +18,10 @@ public class Cadastro {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        
+    CadastroController controller=new CadastroController();
+    
+    new Janela_Cadastro(controller).setVisible(true);
     }
     
 }
