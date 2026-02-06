@@ -1,0 +1,7 @@
+Σ={0,1} ->demonstra o conteúdo que estará presente no conjunto do "alfabeto", ou seja, sempre aparecera
+Σ*={E,0,1,00,01,11,000,001...}-> é a cadeia do conjunto do alfabeto, "E" significa que o conjunto é nulo, ou seja, não tem 0 e 1, e nós vamos em ordem crescente infinitamente, ex="0","00","000","0000"...ou seja, acaba tendo infinitas possibilidades com 0 e 1
+L={w∈Σ*:w termina com "0"} -> é a "restrição" aonde precisa ser seguida para estar dentro do conjunto, ou seja "0" possui w,"10" tambem, mas "1" e "01" não faz parte pois nao termina com "0"
+
+Exercicios
+L1={E,01,0011,000110,...}
+L2={E,AB,BA,AABB,ABAB,...}
