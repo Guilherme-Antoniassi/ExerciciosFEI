@@ -1,0 +1,12 @@
+fluxo de processo linear:
+é um fluxo direto sem nenhuma parada ou retorno
+
+fluxo iterativo:
+é um fluxo aonde tem a possibilidade de poder retornar aos itens anterior(EX:comunicação->planejamento->comunicação->modelagem->modelagem->construção->comunicação->entrega)
+
+fluxo de processo evolucionário:
+executa as atividades de forma "circular" aonde cada volta pelos cinco atividades. Conduz uma versão mais completa de software.
+MVP= mini produto viável(EX: uber pegou lugar do taxi, porem um pequeno app de taxi foi feito as pressa com uma pequena equipe com características simples mas que funcione)
+
+fluxo de processo paralelo:
+executa uma ou mais tarefas em paralelo,(EX: vc faz o planejamento e planejamento simultaneamente)é muito útil para usar o tempo a favor com 2 processo em paralelo, muito útil para quando se já tem uma parte do projeto feito e quer otimizar o desenvolvimento==comunicação/planejamento->modelagem->construção->entrega.
