@@ -1,0 +1,47 @@
+COMO USAR:
+baixar anaconda jupyter notebook 
+
+como calcular- senx+2x+1=0
+
+1 Passo:
+	Localizar raízes:
+	•Através do gráfico
+	•Teorema de Bolzano
+
+Para grafico:
+
+Temos que separar a função em 2 para poder encontrar a/s raízes 
+dica: sempre tentar deixar de um lado o(sem, cos, ln, exponelcial) e do outro lado o resto
+ex:
+senx=-2x-1
+-2x-1=f1(x)
+senx=f2(x)
+
+após isso fazer o gráfico de ambos, e na intersecção entre ambos vai estar entre um valor X negativo e outro positivo, esse valor entre os 2 vai ser a raiz desejada
+
+Para Bolzano:
+
+f(x)=senx+2x+1=0
+calcular os valores manualmente ate encontrar um valor nas troca de sinal
+ex:
+
+f(-3)=sem(-3)+2(-3)+1=-5.14
+f(-2)=sem(-2)+2(-2)+1=-3.90
+f(-1)=sem(-1)+2(-1)+1=-1.84
+f(0)=sem(0)+2(0)+1=1
+
+a troca ocorreu entre -1 e 0, ou seja, a raiz desejada esta entre esses 2 valores.
+
+Método Bolzano no COMPUTADOR:
+
+import numpy as np
+x = np.array([i for i in range(-3,4,1)]).reshape((1,7))
+y=np.sin(x)+2*x+1
+print(x)
+print(np.round(y,2))
+
+em "-3,4,1" o -3 é aonde começa a fazer o calculo, o 4 é aonde termina o calculo, no caso 3 pois o compilador conta o 0, e o 1 é o incremento de 1 em 1.
+em "1,7" o 1 seria as linhas, sempre será 1, o 7 seria as colunas ou seja, de -3 até 3 da 7 valores
+
+Importante:
+Lnx em python é Logx, ou seja np.log(x)
