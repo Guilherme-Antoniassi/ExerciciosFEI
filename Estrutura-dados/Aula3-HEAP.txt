@@ -1,0 +1,11 @@
+Dica de grafo: Topo significa a raiz(maior valor do grafo) da arvore e o final significa as folhas da arvore(menores valores) do grafo.
+
+Arvore: não tem laço e é completamento conectado
+
+HEAP: sempre aponta para o index 0 para remoção
+
+Colocar elementos em um grafo:
+Sempre colocar o elemento na prioridade esquerda, após inserir o index, comparar o valor do filho com o Pai e caso o filho seja maior que o pai é necessário fazer a PENEIRA PARA CIMA ,ou seja, substitui o filho pelo pai, e faz isso até respeitar a estrutura do grafo.
+
+Remover elemento do grafo:
+Para remover um valor do grafo(HEAP) nós substituímos a RAIZ pelo ultimo item a esquerda adicionado e então decrementamos 1 unidade do index, ou seja, se o vetor tinha 10 agora tem 9 elementos. Fazendo isso muito provavelmente agora o valor da raiz é menor que os filhos, e para consertar isso nós usamos a PENEIRA PARA BAIXO, ou seja, nós comparamos o Pai com os filhos e então nós substituímos o pai com o maior valor do filho, e fazemos isso até respeitar novamente a estrutura
