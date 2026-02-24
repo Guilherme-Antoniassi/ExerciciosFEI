@@ -1,0 +1,18 @@
+Scrum: no geral é uma equipe multifuncional(frontend,backend,banco,etc),sua principal função não é e planejar o projeto inteiro e sim uma certa parte do projeto.
+Principais características:
+
+     -Agilidade
+principal conceito seria de "dividir para conquistar" ou seja, a equipe inteira pensar juntos em soluções.
+
+   Funções dos integrantes:
+Scrum master: é o líder do projeto aonde "faz as coisas acontecerem"
+product ownner(vulgo PIOU): ele chega com a demanda que o projeto ira precisar
+time de desenvolvimento: é a função de desenvolver o projeto, não só com backend mas também front,UX etc.
+
+  Eventos do Scrum:
+1-Sprint: período de tempo que será realizada a entrega de projetos, ex: entrega de algo de 2 em 2 semana.
+2-planejamento de Sprint(planning): é o planejamento de funções que deverá ser entregue no próximo Sprint
+3-Daily: reunião diaria, reunião até 15 min
+4-revisão da Sprint(Review): mostrar a funcionalidae funcionando
+5-retrospectiva: vizualizar e rever processos dos eventos e desenvolvimento do projeto
+6-artefato
