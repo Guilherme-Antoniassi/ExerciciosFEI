@@ -1,0 +1,33 @@
+Método de Newton Raphson:
+
+Formula para utilizar:
+Xn+1= Xn-f(xn)/ f'(xn)  
+
+Usando exemplo de: semx+2x+1=0
+
+usando o método (Bolzano) para descobrir o intervalo entre a troca de valor negativo para positivo, nós temos [-1,0]
+
+o X0 é o espaço entre os 2 valores(ponto Médio), nesse caso -0,5; 
+X0=-0,5
+f'(x)= consx+2
+
+usando a Formula: X1=x0-f(x0)/ f'(x0) --> -0,5-f(-0,5)/ f'(-0,5)
+
+fazendo f(-0,5)= sem(-0,5)+2(-0,5)+1=-0,479
+fazendo f'(-0,5)= cos(-0,5)+2=2,878
+
+Substituindo na formula= X1= -0,5- (-0,475/2,878)=-0,333
+
+Após descobrir X1 é possível descobrir X2,x3...
+
+Para x2:
+x2=X1-F(X1)/F'(X1) --> -0,333 - F(-0,333)/F'(0,333)
+
+fazendo f(-0,333)= sem(-0,333)+2(-0,333)+1=0,00071
+fazendo f'(-0,333)= cos(-0,333)+2= 2,9451
+
+X2= -0,333-(0,00071/2,9451)= -0,335
+
+Resposta final= A raiz é -0,335
+
+OBS:nós localizamos X1,X2,X3...  até ter 2 casas igual e a 3 ser diferente
