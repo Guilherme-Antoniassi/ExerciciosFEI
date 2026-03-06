@@ -1,0 +1,31 @@
+Regressao Linear:
+
+Formula= y(x)=a0+a1x
+
+a1=$n.Σ(x1+y1)-Σ(x1).Σ(y1) /frac nΣx1^2-(Σx1)$
+a0=$(Σx1^2)(Σy)-(Σx1*y1)Σ(x1) /frac nΣx1^2-(Σx1)^2 $
+
+Exemplo:
+--Encontrar a reta que melhor se ajusta ao conjunto de dais a seguir(Calcular o resíduo do ajuste)
+
+|X O -1 1
+|Y 1 -1 3
+
+R:
+|X : O -1 1
+|Y : 1 -1 3
+|x^2:0  1 1
+|xy :0  1 3
+|Σ=
+x=0
+y=3
+x^2=3
+xy=4
+
+Com os valores obtidos basta subs em A1 e A0
+
+a0=$3.4-0.3 /frac 3.2-0^2$= $12 /frac 6$=2
+a1=$3.3-4.0 /frac 3.3-0^2$= $9 /frac 9$=1
+
+y(x)=2+1=3
+
