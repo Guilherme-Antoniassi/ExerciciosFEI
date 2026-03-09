@@ -1,0 +1,91 @@
+Arvore binaria:
+
+O valor do Pai é sempre maior q o filho esquerdo, porem menor q o filho direito
+
+
+
+1-Travessia em ordem:
+
+esquerda-raiz-direita(E-R-D)
+1-visitar subarvore esquerda, em ordem E-R-D
+2-nó raiz
+3-visitar subarvore direita, em ordem E-R-D
+
+EX:
+F faz a primeira tarefa, então vai para o B;
+B faz a primeira tarefa, então vai para o A;
+A faz a primeira tarefa, então continua no A pois não tem esquerda;
+A faz a segunda tarefa, então imprime A;
+A faz a terceira, então continua no A;
+A fez todas, então voltamos no B para fazer a segunda;
+B faz a segunda, então imprime B;
+B faz a terceira, então vai para D;
+D faz a primeira, então vai para C;
+C na imeira e a terceira não tem, então faz apenas a segunda e imprime;
+D faz a segunda e imprime;
+D faz a terceira, então vai para E;
+E apenas imprime e volta para F pois todos da esquerda já fez os 3;
+F faz a segunda e imprime e vai para G;
+G imprime e vai para I;
+I vai para H;
+H imprime e volta para I;
+I imprime e termina algoritmo.
+
+Resposta: ,B,C,D,E,F,G,H,I
+
+
+2-Pre-ordem:
+
+RAIZ-ESQUERDA-DIREITA(R-E-D)
+conceito é o mesmo, basta seguir as instruções e fazer
+
+EX:
+F imprime;
+B imprime, vai para A;
+A imprime, vai para D;
+D imprime, vai para C;
+C imprime, vai para E;
+E imprime, vai para G;
+G imprime, I imprime, H imprime.
+
+Resposta: B,A,D,C,E,G,I,H
+
+3-Pos-ordem:
+
+ESQUERDA-DIFEIRA-RAIZ(E-D-R)
+conceito é o mesmo, basta seguir as instruções e fazer
+
+EX:
+A imprime, C imprime;
+E imprime, D imprime;
+B imprime;
+H imprime,I imprime;
+G imprime, F imprime.
+
+Resposta: A,,R,D,B,H,I,G,F
+
+
+
+
+Pre-Ordem:
+
+8 imprime,
+3 imprime,
+1 imprime,
+6 imprime,
+4 imprime,
+7 imprime,
+10 imprime,
+14 imprime,
+13 imprime
+
+Resposta: 8,3,1,6,4,7,10,14,13
+
+Pos ordem:
+
+vai para 3;
+vai para 1 e imprime;
+vai para 6 e imprime 4;
+imprime 7 e 6
+
+Resposta: 1,4,7,6,3,13,,14,10,8
